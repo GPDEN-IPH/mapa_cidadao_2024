@@ -58,7 +58,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-30.883459682885384,-53.072672757502026],[-28.55019357290055,-49.882472573618124]]);
+        }).fitBounds([[-29.18335697826994,-51.896655240817665],[-29.14689969530143,-51.84394251982454]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -220,6 +220,9 @@
                     <tr>\
                         <th scope="row">Data da ocorrência</th>\
                         <td class="visible-with-data" id="Data da Oc">' + (feature.properties['Data da Oc'] !== null ? autolinker.link(feature.properties['Data da Oc'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td class="visible-with-data" id="Mídia"colspan="2"><strong>Mídia</strong><br />' + (feature.properties['Mídia'] !== null ? '<img src="images/' + String(feature.properties['Mídia']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
