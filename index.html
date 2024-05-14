@@ -222,7 +222,7 @@
                         <td class="visible-with-data" id="Data da Oc">' + (feature.properties['Data da Oc'] !== null ? autolinker.link(feature.properties['Data da Oc'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Mídia"colspan="2"><strong>Mídia</strong><br />' + (feature.properties['Mídia'] !== null ? '<img src="images/' + String(feature.properties['Mídia']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                        <td class="visible-with-data" id="Mídia"colspan="2"><strong>Mídia</strong><br />' + (feature.properties['Mídia'] !== null ? '<img src="images/' + String(feature.properties['Mídia']).replace(/[\\\/:]/g, '_').trim() + '" '+ 'class=popupImage' +'>' : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
